@@ -10,7 +10,7 @@ import { ApiService } from './api.service';
 })
 export class MembersDetailComponent implements OnInit {
 
-  selectedMember = {id: 0, name: '', surname: '', phone: ''};
+  selectedMember = {id: 0, name: '', surname: '', phone: '', photo: ''};
   selectedId;
 
   constructor(

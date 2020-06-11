@@ -2,6 +2,10 @@
 
 <span>Você esta editando</span>: {{selectedMember.name}} - {{selectedMember.surname}}
 
+<span class="image left">
+    <img src="{{selectedMember.photo}}" alt="Foto de {{selectedMember.name}}">
+</span>
+
 
 <input type="text" [(ngModel)]="selectedMember.id" readonly><br>
 <input type="text" [(ngModel)]="selectedMember.name"><br>

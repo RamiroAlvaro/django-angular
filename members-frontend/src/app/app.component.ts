@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { ApiService } from './api.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-root',
@@ -17,7 +18,7 @@ export class AppComponent {
     {id: 3, name: 'Ana', surname: 'Coda', phone: '+5531991387170', photo: 'http://www.minhaapp.com/photo3.jpg'},
 ];
 
-constructor(private api: ApiService) {
+constructor(private api: ApiService, private router: Router) {
   this.getMembers();
 }
 getMembers = () => {
@@ -32,14 +33,6 @@ getMembers = () => {
 }
 
 memberClicked = (member) => {
-  this.api.getMember(member.id).subscribe(
-    data => {
-      console.log(data);
-      this.selectedMember = data;
-    },
-    error => {
-      console.log('Aconteceu um erro', error.message);
-    }
-  );
+   this.router.navigate(['member-detail', member.id]);
 }
 }
